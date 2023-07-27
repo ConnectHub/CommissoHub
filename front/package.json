@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "json-as-xlsx": "^2.5.3",
+    "json2xls": "^0.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

@@ -1,0 +1,59 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Profile {
+  CANDIDATE
+  COMISSIONADO
+}
+
+model user {
+  id               String         @id @default(uuid())
+  name             String
+  email            String         @unique
+  password         String
+  profile          Profile
+  politicalPartyId String
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @default(now()) @updatedAt
+  deletedAt        DateTime?
+  vote             vote[]
+  politicalParty   politicalParty @relation(fields: [politicalPartyId], references: [id])
+
+  @@map("Candidate")
+}
+
+model vote {
+  id          String    @id @default(uuid())
+  candidateId String
+  cpf         String?
+  nome        String?
+  cep         String?
+  latitude    String
+  longitude   String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @default(now()) @updatedAt
+  deletedAt   DateTime?
+  candidate   user      @relation(fields: [candidateId], references: [id])
+
+  @@map("Vote")
+}
+
+model politicalParty {
+  id        String    @id @default(uuid())
+  name      String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @default(now()) @updatedAt
+  deletedAt DateTime?
+  candidate user[]
+
+  @@map("PoliticalParty")
+}
