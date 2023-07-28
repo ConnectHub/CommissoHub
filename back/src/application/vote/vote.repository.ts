@@ -11,4 +11,14 @@ export class VoteRepository implements VoteRepositoryInterface {
       data: vote,
     });
   }
+
+  async alreadyVoted(cpf: string): Promise<boolean> {
+    const vote = await this.prisma.vote.findFirst({
+      where: {
+        cpf,
+        year: new Date().getFullYear(),
+      },
+    });
+    return !!vote;
+  }
 }

@@ -5,6 +5,7 @@ import {
   IsOptional,
   IsString,
   IsUUID,
+  Length,
   MinLength,
 } from 'class-validator';
 
@@ -19,21 +20,26 @@ export class VoteDto {
   @MinLength(3)
   name?: string;
 
-  @IsOptional()
   @IsString()
-  cpf?: string;
+  @IsNotEmpty()
+  @Length(11, 11)
+  cpf: string;
+
+  @IsString()
+  @IsNotEmpty()
+  cep: string;
 
   @IsOptional()
-  @IsString()
-  cep?: string;
-
   @IsString()
   @IsNotEmpty()
   @IsLatitude()
-  latitude: string;
+  latitude?: string;
 
+  @IsOptional()
   @IsString()
   @IsNotEmpty()
   @IsLongitude()
-  longitude: string;
+  longitude?: string;
+
+  year: number;
 }

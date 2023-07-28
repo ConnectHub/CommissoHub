@@ -34,11 +34,12 @@ model user {
 model vote {
   id          String    @id @default(uuid())
   candidateId String
-  cpf         String?
+  cpf         String
   nome        String?
-  cep         String?
-  latitude    String
-  longitude   String
+  cep         String
+  latitude    String?
+  longitude   String?
+  year        Int
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @default(now()) @updatedAt
   deletedAt   DateTime?
