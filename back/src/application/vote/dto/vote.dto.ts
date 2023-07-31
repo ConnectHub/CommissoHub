@@ -1,3 +1,4 @@
+import { IsCEP, IsCPF } from 'brazilian-class-validator';
 import {
   IsLatitude,
   IsLongitude,
@@ -5,7 +6,6 @@ import {
   IsOptional,
   IsString,
   IsUUID,
-  Length,
   MinLength,
 } from 'class-validator';
 
@@ -22,11 +22,12 @@ export class VoteDto {
 
   @IsString()
   @IsNotEmpty()
-  @Length(11, 11)
+  @IsCPF()
   cpf: string;
 
   @IsString()
   @IsNotEmpty()
+  @IsCEP()
   cep: string;
 
   @IsOptional()

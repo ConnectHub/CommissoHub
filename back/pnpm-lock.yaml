@@ -23,6 +23,9 @@ dependencies:
   bcrypt:
     specifier: ^5.1.0
     version: 5.1.0
+  brazilian-class-validator:
+    specifier: ^0.1.6
+    version: 0.1.6
   class-transformer:
     specifier: ^0.5.1
     version: 0.5.1
@@ -1915,6 +1918,17 @@ packages:
       fill-range: 7.0.1
     dev: true
 
+  /brazilian-class-validator@0.1.6:
+    resolution: {integrity: sha512-5HxqwwVTJqd9v0JbCcZXtjBCJP+n8eNFBHlmcqFVzScYFDQu2haYnR6Mwm7+PTptPgB5kj4WgSZdAE/wqAVmCQ==}
+    dependencies:
+      brazilian-values: 0.10.1
+      class-validator: 0.13.2
+    dev: false
+
+  /brazilian-values@0.10.1:
+    resolution: {integrity: sha512-HruDLDug8oD2lydSEP/L7JJTNcgwTH2uIdXUQKRKjwqHDMbSsJ0Hxi5GOJwxPYBrAx2a6RZXnUbG8krjbw4GGw==}
+    dev: false
+
   /browserslist@4.21.9:
     resolution: {integrity: sha512-M0MFoZzbUrRU4KNfCrDLnvyE7gub+peetoTid3TBIqtunaDJyXlwhakT+/VkvSXcfIzFfK/nkCs4nmyTmxdNSg==}
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
@@ -2045,6 +2059,13 @@ packages:
 
   /class-transformer@0.5.1:
     resolution: {integrity: sha512-SQa1Ws6hUbfC98vKGxZH3KFY0Y1lm5Zm0SY8XX9zbK7FJCyVEac3ATW0RIpwzW+oOfmHE5PMPufDG9hCfoEOMw==}
+
+  /class-validator@0.13.2:
+    resolution: {integrity: sha512-yBUcQy07FPlGzUjoLuUfIOXzgynnQPPruyK1Ge2B74k9ROwnle1E+NxLWnUv5OLU8hA/qL5leAE9XnXq3byaBw==}
+    dependencies:
+      libphonenumber-js: 1.10.38
+      validator: 13.9.0
+    dev: false
 
   /class-validator@0.14.0:
     resolution: {integrity: sha512-ct3ltplN8I9fOwUd8GrP8UQixwff129BkEtuWDKL5W45cQuLd19xqmTLu5ge78YDm/fdje6FMt0hGOhl0lii3A==}

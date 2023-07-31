@@ -4,10 +4,6 @@ import { VoteRepositoryInterface } from 'src/domain/repositories/vote';
 import { CandidateService } from '../user/candidate.service';
 import { UserIsNotCandidate } from './errors/user-is-not-candidate';
 import { UserAlreadyVoted } from './errors/user-already-voted';
-import { ValidateCep } from './helpers/validate-cep';
-import { CepIsNotValid } from './errors/cep-is-not-valid';
-import { ValidateCpf } from './helpers/validate-cpf';
-import { CpfIsNotValid } from './errors/cpf-is-not-valid';
 
 @Injectable()
 export class VoteService {
@@ -19,16 +15,12 @@ export class VoteService {
 
   async vote(voteDto: Vote): Promise<void> {
     this.logger.log(`Voting for candidate ${voteDto.candidateId}`);
-    const [isCandidate, alreadyVoted, cepIsValid] = await Promise.all([
+    const [isCandidate, alreadyVoted] = await Promise.all([
       this.candidateService.isCandidate(voteDto.candidateId),
       this.alreadyVoted(voteDto.cpf),
-      new ValidateCep(voteDto.cep).validate(),
     ]);
     if (!isCandidate) throw new UserIsNotCandidate();
     if (alreadyVoted) throw new UserAlreadyVoted();
-    if (!cepIsValid) throw new CepIsNotValid();
-    const cpfIsValid = new ValidateCpf(voteDto.cpf).validate();
-    if (!cpfIsValid) throw new CpfIsNotValid();
     await this.voteRepositoryInterface.vote(voteDto);
   }
 

@@ -5,10 +5,9 @@ import { VoteService } from './vote.service';
 import { VoteController } from './vote.controller';
 import { PrismaModule } from 'src/infra/prisma/prisma.module';
 import { CandidateModule } from '../user/candidate.module';
-import { RequesterModule } from 'src/infra/request/requester.module';
 
 @Module({
-  imports: [PrismaModule, CandidateModule, RequesterModule],
+  imports: [PrismaModule, CandidateModule],
   controllers: [VoteController],
   providers: [
     VoteService,
