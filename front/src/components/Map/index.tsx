@@ -23,11 +23,11 @@ const geoJsonSample = {
 
 const maxCircleSize = 50;
 
-export default function MyMap() {
+function MapComponent() {
   return (
     <Map
-      height={1920}
-      width={1080}
+      height={920}
+      width={1900}
       defaultCenter={[50.879, 4.6997]}
       defaultZoom={4}
     >
@@ -83,3 +83,5 @@ export default function MyMap() {
     </Map>
   );
 }
+
+export default MapComponent;
