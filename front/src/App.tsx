@@ -1,35 +1,85 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Map, GeoJson, Marker } from 'pigeon-maps';
 
-function App() {
-  const [count, setCount] = useState(0)
+const geoJsonSample = {
+  type: 'FeatureCollection',
+  features: [
+    {
+      type: 'Feature',
+      geometry: { type: 'Point', coordinates: [2.0, 48.5] },
+      properties: { prop0: 'value0', numPeople: 5 },
+    },
+    {
+      type: 'Feature',
+      geometry: { type: 'Point', coordinates: [20.0, 48.5] },
+      properties: { prop0: 'value0', prop1: 10.0, numPeople: 10 },
+    },
+    {
+      type: 'Feature',
+      geometry: { type: 'Point', coordinates: [25.0, 48.5] },
+      properties: { prop0: 'value0', prop1: 10.0, numPeople: 50 },
+    },
+  ],
+};
 
+const maxCircleSize = 50;
+
+export default function MyMap() {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Map
+      height={1920}
+      width={1080}
+      defaultCenter={[50.879, 4.6997]}
+      defaultZoom={4}
+    >
+      <GeoJson
+        data={geoJsonSample}
+        styleCallback={(feature: any, hover: any) => {
+          if (feature.geometry.type === 'LineString') {
+            return { strokeWidth: '1', stroke: 'black' };
+          }
+          const numPeople = feature.properties.numPeople || 0;
+          const radius = Math.min(5 + numPeople * 2, maxCircleSize);
+          let transparency = 0;
+          let redIntensity = 0;
 
-export default App
+          if (feature.properties.numPeople <= 10) {
+            redIntensity = 1;
+            transparency = 0.1;
+          }
+          if (feature.properties.numPeople <= 20) {
+            redIntensity = 5;
+            transparency = 0.3;
+          }
+          if (feature.properties.numPeople >= 30) {
+            redIntensity = 10;
+            transparency = 0.6;
+          }
+
+          return {
+            fill: `hsla(${redIntensity}, 100%, 50%, ${transparency})`,
+            strokeWidth: '1',
+            r: radius,
+          };
+        }}
+      />
+      {geoJsonSample.features.map((feature, index) => (
+        <Marker
+          key={index}
+          anchor={[
+            feature.geometry.coordinates[1],
+            feature.geometry.coordinates[0],
+          ]}
+        >
+          <div
+            style={{
+              backgroundColor: 'white',
+              padding: '4px',
+            }}
+          >
+            {feature.properties.numPeople} people
+          </div>
+        </Marker>
+      ))}
+    </Map>
+  );
+}

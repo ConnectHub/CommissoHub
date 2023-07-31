@@ -11,6 +11,9 @@ dependencies:
   json2xls:
     specifier: ^0.1.2
     version: 0.1.2
+  pigeon-maps:
+    specifier: ^0.21.3
+    version: 0.21.3(react@18.2.0)
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -1558,6 +1561,14 @@ packages:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
     dev: true
+
+  /pigeon-maps@0.21.3(react@18.2.0):
+    resolution: {integrity: sha512-NbzISHHvMrcYBMBJ6NSSdTC1iGshSYOvsql9AqBfsE7KXni9xFIV9dkIWAfkKGCbafZ/0JysWZSp7zfg2piOFg==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /postcss@8.4.26:
     resolution: {integrity: sha512-jrXHFF8iTloAenySjM/ob3gSj7pCu0Ji49hnjqzsgSRa50hkWCKD0HQ+gMNJkW38jBI68MpAAg7ZWwHwX8NMMw==}
