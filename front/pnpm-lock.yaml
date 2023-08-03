@@ -35,8 +35,8 @@ devDependencies:
     specifier: ^4.32.1
     version: 4.32.1
   '@types/react':
-    specifier: ^18.2.17
-    version: 18.2.17
+    specifier: ^18.2.18
+    version: 18.2.18
   '@types/react-dom':
     specifier: ^18.2.7
     version: 18.2.7
@@ -47,8 +47,8 @@ devDependencies:
     specifier: ^5.62.0
     version: 5.62.0(eslint@8.46.0)(typescript@5.1.6)
   '@vitejs/plugin-react':
-    specifier: ^4.0.3
-    version: 4.0.3(vite@4.4.7)
+    specifier: ^4.0.4
+    version: 4.0.4(vite@4.4.8)
   eslint:
     specifier: ^8.46.0
     version: 8.46.0
@@ -62,8 +62,8 @@ devDependencies:
     specifier: ^5.1.6
     version: 5.1.6
   vite:
-    specifier: ^4.4.7
-    version: 4.4.7
+    specifier: ^4.4.8
+    version: 4.4.8
 
 packages:
 
@@ -650,11 +650,11 @@ packages:
   /@types/react-dom@18.2.7:
     resolution: {integrity: sha512-GRaAEriuT4zp9N4p1i8BDBYmEyfo+xQ3yHjJU4eiK5NDa1RmUZG+unZABUTK4/Ox/M+GaHwb6Ow8rUITrtjszA==}
     dependencies:
-      '@types/react': 18.2.17
+      '@types/react': 18.2.18
     dev: true
 
-  /@types/react@18.2.17:
-    resolution: {integrity: sha512-u+e7OlgPPh+aryjOm5UJMX32OvB2E3QASOAqVMY6Ahs90djagxwv2ya0IctglNbNTexC12qCSMZG47KPfy1hAA==}
+  /@types/react@18.2.18:
+    resolution: {integrity: sha512-da4NTSeBv/P34xoZPhtcLkmZuJ+oYaCxHmyHzwaDQo9RQPBeXV+06gEk2FpqEcsX9XrnNLvRpVh6bdavDSjtiQ==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.3
@@ -799,8 +799,8 @@ packages:
       eslint-visitor-keys: 3.4.2
     dev: true
 
-  /@vitejs/plugin-react@4.0.3(vite@4.4.7):
-    resolution: {integrity: sha512-pwXDog5nwwvSIzwrvYYmA2Ljcd/ZNlcsSG2Q9CNDBwnsd55UGAyr2doXtB5j+2uymRCnCfExlznzzSFbBRcoCg==}
+  /@vitejs/plugin-react@4.0.4(vite@4.4.8):
+    resolution: {integrity: sha512-7wU921ABnNYkETiMaZy7XqpueMnpu5VxvVps13MjmCo+utBdD79sZzrApHawHtVX66cCJQQTXFcjH0y9dSUK8g==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.2.0
@@ -809,7 +809,7 @@ packages:
       '@babel/plugin-transform-react-jsx-self': 7.22.5(@babel/core@7.22.9)
       '@babel/plugin-transform-react-jsx-source': 7.22.5(@babel/core@7.22.9)
       react-refresh: 0.14.0
-      vite: 4.4.7
+      vite: 4.4.8
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -906,8 +906,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001517
-      electron-to-chromium: 1.4.477
+      caniuse-lite: 1.0.30001518
+      electron-to-chromium: 1.4.482
       node-releases: 2.0.13
       update-browserslist-db: 1.0.11(browserslist@4.21.10)
     dev: true
@@ -917,8 +917,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /caniuse-lite@1.0.30001517:
-    resolution: {integrity: sha512-Vdhm5S11DaFVLlyiKu4hiUTkpZu+y1KA/rZZqVQfOD5YdDT/eQKlkt7NaE0WGOFgX32diqt9MiP9CAiFeRklaA==}
+  /caniuse-lite@1.0.30001518:
+    resolution: {integrity: sha512-rup09/e3I0BKjncL+FesTayKtPrdwKhUufQFd3riFw1hHg8JmIFoInYfB102cFcY/pPgGmdyl/iy+jgiDi2vdA==}
     dev: true
 
   /chalk@2.4.2:
@@ -1022,8 +1022,8 @@ packages:
       esutils: 2.0.3
     dev: true
 
-  /electron-to-chromium@1.4.477:
-    resolution: {integrity: sha512-shUVy6Eawp33dFBFIoYbIwLHrX0IZ857AlH9ug2o4rvbWmpaCUdBpQ5Zw39HRrfzAFm4APJE9V+E2A/WB0YqJw==}
+  /electron-to-chromium@1.4.482:
+    resolution: {integrity: sha512-h+UqpfmEr1Qkk0zp7ej/jid7CXoq4m4QzW6wNTb0ELJ/BZCpA4wgUylBIMGCe621tnr4l5VmoHjdoSx2lbnNJA==}
     dev: true
 
   /esbuild@0.18.17:
@@ -1857,8 +1857,8 @@ packages:
       react: 18.2.0
     dev: false
 
-  /vite@4.4.7:
-    resolution: {integrity: sha512-6pYf9QJ1mHylfVh39HpuSfMPojPSKVxZvnclX1K1FyZ1PXDOcLBibdq5t1qxJSnL63ca8Wf4zts6mD8u8oc9Fw==}
+  /vite@4.4.8:
+    resolution: {integrity: sha512-LONawOUUjxQridNWGQlNizfKH89qPigK36XhMI7COMGztz8KNY0JHim7/xDd71CZwGT4HtSRgI7Hy+RlhG0Gvg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
