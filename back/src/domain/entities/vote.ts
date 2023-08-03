@@ -5,8 +5,8 @@ export class Vote {
   cpf: string;
 
   cep: string;
-  latitude?: string;
-  longitude?: string;
+  latitude?: number;
+  longitude?: number;
   year: number;
 
   createdAt?: Date;

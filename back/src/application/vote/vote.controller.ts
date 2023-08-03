@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Post, Get, Param } from '@nestjs/common';
 import { VoteService } from './vote.service';
 import { VoteDto } from './dto/vote.dto';
 
@@ -10,5 +10,10 @@ export class VoteController {
   async vote(@Body() voteDto: VoteDto) {
     voteDto.year = new Date().getFullYear();
     return await this.voteService.vote(voteDto);
+  }
+
+  @Get('map/:candidateId')
+  async getMapLocations(@Param('candidateId') candidateId: string) {
+    return await this.voteService.getMapLocations(candidateId);
   }
 }

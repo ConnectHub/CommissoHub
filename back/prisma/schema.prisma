@@ -32,18 +32,19 @@ model user {
 }
 
 model vote {
-  id          String    @id @default(uuid())
-  candidateId String
-  cpf         String
-  nome        String?
-  cep         String
-  latitude    String?
-  longitude   String?
-  year        Int
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @default(now()) @updatedAt
-  deletedAt   DateTime?
-  candidate   user      @relation(fields: [candidateId], references: [id])
+  id           String    @id @default(uuid())
+  candidateId  String
+  cpf          String
+  nome         String?
+  cep          String
+  latitude     Float?
+  longitude    Float?
+  municipality String?
+  year         Int
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @default(now()) @updatedAt
+  deletedAt    DateTime?
+  candidate    user      @relation(fields: [candidateId], references: [id])
 
   @@map("Vote")
 }

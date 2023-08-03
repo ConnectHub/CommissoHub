@@ -31,16 +31,15 @@ export class VoteDto {
   cep: string;
 
   @IsOptional()
-  @IsString()
   @IsNotEmpty()
   @IsLatitude()
-  latitude?: string;
+  latitude?: number;
 
   @IsOptional()
   @IsString()
   @IsNotEmpty()
   @IsLongitude()
-  longitude?: string;
+  longitude?: number;
 
   year: number;
 }

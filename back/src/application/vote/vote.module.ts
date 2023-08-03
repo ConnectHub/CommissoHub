@@ -16,5 +16,6 @@ import { CandidateModule } from '../user/candidate.module';
       useClass: VoteRepository,
     },
   ],
+  exports: [VoteService],
 })
 export class VoteModule {}
