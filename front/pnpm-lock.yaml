@@ -32,8 +32,8 @@ dependencies:
 
 devDependencies:
   '@tanstack/eslint-plugin-query':
-    specifier: ^4.32.1
-    version: 4.32.1
+    specifier: ^4.36.0
+    version: 4.36.0(eslint@8.46.0)
   '@types/react':
     specifier: ^18.2.18
     version: 18.2.18
@@ -613,8 +613,12 @@ packages:
     engines: {node: '>=14'}
     dev: false
 
-  /@tanstack/eslint-plugin-query@4.32.1:
-    resolution: {integrity: sha512-29oveq5n7momN+/d0SheNccnp1qws4JRG/PdeiPHwWAVQ9HxwtZTFxhFJxvMzVk7UsY3LsQB0keIajC+K9ZJ7w==}
+  /@tanstack/eslint-plugin-query@4.36.0(eslint@8.46.0):
+    resolution: {integrity: sha512-dfKjV4k7QSAg7ROe25RlshcfkZsZKPIHcDibYtjckAlNkrwBFacCjwCsdNCt/neru6D7yCJYR0P59Ww8tg1JLQ==}
+    peerDependencies:
+      eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
+    dependencies:
+      eslint: 8.46.0
     dev: true
 
   /@tanstack/query-core@4.32.1:
